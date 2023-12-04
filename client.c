@@ -1,5 +1,4 @@
-#include <signal.h>
-#include <stdlib.h>
+#include "minitalk.h"
 
 void    handle_char(char character, int pid_number)
 {
@@ -20,8 +19,8 @@ void    handle_char(char character, int pid_number)
 
 int main(int argc, char **argv)
 {
-    int id = atoi(argv[1]);
+	int id = atoi(argv[1]);	
 
-    kill(id, SIGUSR1);
-    return (0);
+	kill(id, SIGUSR1);
+	return (0);
 }

@@ -1,6 +1,4 @@
-#include <signal.h>
-#include <stdio.h>
-#include <unistd.h>
+#include "minitalk.h"
 
 void	handle_user_sig(int sig)
 {
