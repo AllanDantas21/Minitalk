@@ -27,7 +27,6 @@ int	main(int argc, char* argv[])
 		sa.sa_flags = SA_RESTART;
 		sa.sa_handler = &handle_sigusr1;
 		sigaction(SIGUSR1, &sa, NULL); 
-
 		printf("qual o resultado de 3 x 5:");
 		scanf("%d", &x);
 		if (x == 15)
