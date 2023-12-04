@@ -13,7 +13,8 @@ int	main(void)
 	printf("%d", pid);
 	sa.sa_flags = SA_RESTART;
 	sa.sa_handler = &handle_user_sig;
-	pause();
+	while(1)
+		sleep(1);
 	sigaction(SIGUSR1, &sa, NULL);
 	return(0);
 }
