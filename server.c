@@ -6,13 +6,10 @@ void	handle_user_sig(int sig)
 }
 
 int	main(void)
-{	
-	printf("_____ _     _ _       _ _    \n");
-	printf("|     |_|___|_| |_ ___| | |_ \n");
-	printf("| | | | |   | |  _| .'| | '_|\n");
-	printf("|_|_|_|_|_|_|_|_| |__,|_|_,_|\n");
+{
+	minitalk_header();
 	printf("server iniciado!!->");
-	printf("PID: %d\n", getpid());
+	printf(" PID: %d\n", getpid());
 	while(1)
 	{
 		signal(SIGUSR1, handle_user_sig);
