@@ -2,7 +2,10 @@
 
 void	handle_user_sig(int sig)
 {
-	write(1, "test", 4);
+	if(sig == 10)
+		printf("1");
+	else if(sig == SIGUSR2)
+		printf("0");
 }
 
 int	main(void)

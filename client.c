@@ -16,7 +16,7 @@ void    handle_char(int pid_number, char character)
 			kill(pid_number, SIGUSR1);
 	}
 }
-void	handle_string(int pid, char *str)
+/*void	handle_string(int pid, char *str)
 {
 	int	i;
 
@@ -24,12 +24,12 @@ void	handle_string(int pid, char *str)
 	while(msg[i++])
 		handle_char(pid, msg[i]);
 	handle_char(pid, 0);
-}
+}*/
 
 int main(int argc, char **argv)
 {
 	int id = atoi(argv[1]);	
 
-	kill(id, SIGUSR1);
+	handle_char(id, argv[1][0]);
 	return (0);
 }
