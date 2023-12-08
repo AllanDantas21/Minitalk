@@ -6,14 +6,17 @@ void	handle_user_sig(int sig)
 }
 
 int	main(void)
-{
-	int pid = getpid();
-	struct sigaction sa =  {0};
-
-	printf("%d", pid);
-	sa.sa_flags = SA_RESTART;
-	sa.sa_handler = &handle_user_sig;
-	sigaction(SIGUSR1, &sa, NULL);
+{	
+	printf("_____ _     _ _       _ _    \n");
+	printf("|     |_|___|_| |_ ___| | |_ \n");
+	printf("| | | | |   | |  _| .'| | '_|\n");
+	printf("|_|_|_|_|_|_|_|_| |__,|_|_,_|\n");
+	printf("server iniciado!!->");
+	printf("PID: %d\n", getpid());
 	while(1)
-		sleep(1);
+	{
+		signal(SIGUSR1, handle_user_sig);
+		signal(SIGUSR2, handle_user_sig);
+	}
+	return (0);
 }
