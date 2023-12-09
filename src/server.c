@@ -2,26 +2,26 @@
 
 void	minitalk_header(void)
 {
-	printf("\033[32m _____ _     _ _       _ _    \n");
-	printf(" |     |_|___|_| |_ ___| | |_ \n");
-	printf(" | | | | |   | |  _| .'| | '_|\n");
-	printf(" |_|_|_|_|_|_|_|_| |__,|_|_,_|\n\033[37m");
+	ft_printf("\033[32m _____ _     _ _       _ _    \n");
+	ft_printf(" |     |_|___|_| |_ ___| | |_ \n");
+	ft_printf(" | | | | |   | |  _| .'| | '_|\n");
+	ft_printf(" |_|_|_|_|_|_|_|_| |__,|_|_,_|\n\033[37m");
 }
 
 void	handle_user_sig(int sig)
 {
 	ft_printf("um sinal foi recebido");
 	if(sig == 10)
-		printf("1");
+		ft_printf("1");
 	else if(sig == SIGUSR2)
-		printf("0");
+		ft_printf("0");
 }
 
 int	main(void)
 {
 	minitalk_header();
-	printf("server iniciado!!->");
-	printf(" PID: %d\n", getpid());
+	ft_printf("server iniciado!!->");
+	ft_printf(" PID: %d\n", getpid());
 	while(1)
 	{
 		signal(SIGUSR1, handle_user_sig);
