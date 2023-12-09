@@ -37,4 +37,8 @@ fclean : clean
 		${RM} $(BONUS_NAMEC)
 		${RM} $(BONUS_NAMES)
 		${RM} $(PRINTF)
+
+re: fclean all
+
+.PHONY:		all bonus clean fclean re
 		
