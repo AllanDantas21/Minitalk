@@ -28,6 +28,7 @@ void    handle_char(int pid_number, char character)
 
 int main(int argc, char **argv)
 {
+	(void)argc;
 	int id = atoi(argv[1]);	
 
 	handle_char(id, argv[1][0]);

@@ -1,5 +1,13 @@
 #include "../include/minitalk.h"
 
+void	minitalk_header(void)
+{
+	printf("\033[32m _____ _     _ _       _ _    \n");
+	printf(" |     |_|___|_| |_ ___| | |_ \n");
+	printf(" | | | | |   | |  _| .'| | '_|\n");
+	printf(" |_|_|_|_|_|_|_|_| |__,|_|_,_|\n\033[37m");
+}
+
 void	handle_user_sig(int sig)
 {
 	if(sig == 10)
