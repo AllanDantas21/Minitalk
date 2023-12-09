@@ -29,3 +29,12 @@ clean :
 		${RM} ${OBJS}
 		${RM} ${OBJBC}
 		${RM} ${OBJBS}
+
+fclean : clean
+		@make fclean -C printf
+		${RM} $(NAMEC)
+		${RM} $(NAMES)
+		${RM} $(BONUS_NAMEC)
+		${RM} $(BONUS_NAMES)
+		${RM} $(PRINTF)
+		
