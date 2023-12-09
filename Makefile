@@ -22,3 +22,10 @@ $(NAMEC) : $(OBJC)
 $(NAMES) : $(OBJS)
 		@make -C printf
 		$(CC) $(CFLAGS) $(OBJS) $(INCLUDE) printf/$(PRINTF) -o $(NAMES)
+
+clean :
+		@make clean -C printf
+		${RM} ${OBJC}
+		${RM} ${OBJS}
+		${RM} ${OBJBC}
+		${RM} ${OBJBS}
