@@ -17,11 +17,11 @@ all:	$(NAMEC) $(NAMES)
 
 $(NAMEC) : $(OBJC)
 		@make -C printf
-		$(CC) $(CFLAGS) $(OBJC) $(INCLUDE) printf/$(PRINTF) -o $(NAMEC)
+		$(CC) $(CFLAGS) $(OBJC) $(INCLUDE) ft_printf/$(PRINTF) -o $(NAMEC)
 	
 $(NAMES) : $(OBJS)
 		@make -C printf
-		$(CC) $(CFLAGS) $(OBJS) $(INCLUDE) printf/$(PRINTF) -o $(NAMES)
+		$(CC) $(CFLAGS) $(OBJS) $(INCLUDE) ft_printf/$(PRINTF) -o $(NAMES)
 
 clean :
 		@make clean -C printf
