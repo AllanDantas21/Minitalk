@@ -11,11 +11,16 @@ void	minitalk_header(void)
 
 void	handle_user_sig(int sig)
 {
+	static int				i = 0;
+	static unsigned char	c = 0;;
 	//ft_printf("um sinal foi recebido");
-	if(sig == SIGUSR1)
-		ft_printf("1");
-	if(sig == SIGUSR2)
-		ft_printf("0");
+
+	if (i == 8)
+	{
+		ft_printf("%c", c);
+		i = 0;
+		c = 0;
+	}
 }
 
 int	main(void)
