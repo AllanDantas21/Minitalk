@@ -31,6 +31,6 @@ int main(int argc, char **argv)
 	(void)argc;
 	int id = atoi(argv[1]);	
 
-	handle_char(id, argv[1][0]);
+	handle_char(id, argv[2][0]);
 	return (0);
 }

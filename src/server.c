@@ -10,10 +10,10 @@ void	minitalk_header(void)
 
 void	handle_user_sig(int sig)
 {
-	ft_printf("um sinal foi recebido");
-	if(sig == 10)
+	//ft_printf("um sinal foi recebido");
+	if(sig == SIGUSR1)
 		ft_printf("1");
-	else if(sig == SIGUSR2)
+	if(sig == SIGUSR2)
 		ft_printf("0");
 }
 
