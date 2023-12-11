@@ -1,6 +1,6 @@
 #include "../include/minitalk.h"
 
-void    handle_char(int pid_number, char character)
+void    handle_char(int pid, char character)
 {
 	int	i;
 
@@ -8,9 +8,10 @@ void    handle_char(int pid_number, char character)
 	while (i--)
 	{
 		if (character & (1 << i))
-			kill(pid_number, SIGUSR2);
+			kill(pid, SIGUSR2);
 		else
-			kill(pid_number, SIGUSR1);
+			kill(pid, SIGUSR1);
+		usleep(100);
 	}
 }
 /*void	handle_string(int pid, char *str)
