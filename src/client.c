@@ -1,6 +1,6 @@
 #include "../include/minitalk.h"
 
-void    handle_char(int pid, char character)
+void    char_to_sig(int pid, char character)
 {
 	int	i;
 
@@ -22,9 +22,9 @@ void	send_msg(int id, char *msg)
 	i = 0;
 	while(msg[i])
 	{	
-		handle_char(id, msg[i++]);
+		char_to_sig(id, msg[i++]);
 	}
-	handle_char(id, '\n');
+	char_to_sig(id, '\n');
 }
 
 int	check_args(char *pid, char *msg_arg)
