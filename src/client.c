@@ -1,6 +1,6 @@
 #include "../include/minitalk.h"
 
-void    char_to_sig(int pid, char character)
+void	char_to_sig(int pid, char character)
 {
 	int	i;
 
@@ -20,8 +20,8 @@ void	send_msg(int id, char *msg)
 	int	i;
 
 	i = 0;
-	while(msg[i])
-	{	
+	while (msg[i])
+	{
 		char_to_sig(id, msg[i++]);
 	}
 	char_to_sig(id, '\n');
@@ -31,9 +31,9 @@ int	check_args(char *pid, char *msg_arg)
 {
 	if (!msg_arg)
 		return (-1);
-	while(*pid)
+	while (*pid)
 	{
-		if(!ft_isdigit(*pid))
+		if (!ft_isdigit(*pid))
 		{
 			ft_printf("o pid só deve conter digitos!");
 			return (-1);
@@ -43,14 +43,15 @@ int	check_args(char *pid, char *msg_arg)
 	return (0);
 }
 
-int main(int argc, char **argv)
+int	main(int argc, char **argv)
 {
 	int	id;
+
 	if (argc == 3)
 	{
-		if(check_args(argv[1], argv[2]) == -1)
+		if (check_args(argv[1], argv[2]) == -1)
 			return (0);
-		id = ft_atoi(argv[1]);	
+		id = ft_atoi(argv[1]);
 		send_msg(id, argv[2]);
 	}
 	else
