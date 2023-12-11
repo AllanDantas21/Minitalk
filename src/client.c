@@ -32,7 +32,7 @@ int main(int argc, char **argv)
 	int	id;
 	if (argc == 3)
 	{
-		id = atoi(argv[1]);	
+		id = ft_atoi(argv[1]);	
 		send_msg(id, argv[2]);
 	}
 	else

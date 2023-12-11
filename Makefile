@@ -1,6 +1,7 @@
 NAMEC = client
 NAMES = server
 PRINTF = libftprintf.a
+LIBFT = libft.a
 SRCC_FILES =	client.c
 SRCS_FILES =	server.c
 SRC_DIR = src/
@@ -17,14 +18,17 @@ all:	$(NAMEC) $(NAMES)
 
 $(NAMEC) : $(OBJC)
 		@make -C printf
-		$(CC) $(CFLAGS) $(OBJC) $(INCLUDE) printf/$(PRINTF) -o $(NAMEC)
+		@make -C libft
+		$(CC) $(CFLAGS) $(OBJC) $(INCLUDE) printf/$(PRINTF) libft/$(LIBFT) -o $(NAMEC)
 	
 $(NAMES) : $(OBJS)
 		@make -C printf
-		$(CC) $(CFLAGS) $(OBJS) $(INCLUDE) printf/$(PRINTF) -o $(NAMES)
+		@make -C libft
+		$(CC) $(CFLAGS) $(OBJS) $(INCLUDE) printf/$(PRINTF) libft/$(LIBFT) -o $(NAMES)
 
-clean :
+clean : 
 		@make clean -C printf
+		@make clean -C libft
 		${RM} ${OBJC}
 		${RM} ${OBJS}
 		${RM} ${OBJBC}
@@ -32,11 +36,13 @@ clean :
 
 fclean : clean
 		@make fclean -C printf
+		@make fclean -C libft
 		${RM} $(NAMEC)
 		${RM} $(NAMES)
 		${RM} $(BONUS_NAMEC)
 		${RM} $(BONUS_NAMES)
 		${RM} $(PRINTF)
+		${RM} $(LIBFT)
 
 re: fclean all
 
