@@ -14,15 +14,18 @@ void    handle_char(int pid, char character)
 		usleep(100);
 	}
 }
-/*void	handle_string(int pid, char *str)
+
+void	send_msg(int id, char *msg)
 {
 	int	i;
 
-	i = -1;
-	while(msg[i++])
-		handle_char(pid, msg[i]);
-	handle_char(pid, 0);
-}*/
+	i = 0;
+	while(msg[i])
+	{
+		handle_char(id, msg[i++]);
+	}
+	handle_char(id, '\n');
+}
 
 int main(int argc, char **argv)
 {
@@ -30,7 +33,7 @@ int main(int argc, char **argv)
 	if (argc == 3)
 	{
 		id = atoi(argv[1]);	
-		handle_char(id, *argv[2]);
+		send_msg(id, argv[2]);
 	}
 	else
 	{
