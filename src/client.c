@@ -3,14 +3,11 @@
 void    handle_char(int pid_number, char character)
 {
 	int	i;
-	unsigned char temp_char;
 
 	i = 8;
-	temp_char = character;
-	while (i-- > 0)
+	while (i--)
 	{
-		temp_char = character >> i;
-		if (temp_char % 2 == 0)
+		if (character & (1 << i))
 			kill(pid_number, SIGUSR2);
 		else
 			kill(pid_number, SIGUSR1);
@@ -28,11 +25,16 @@ void    handle_char(int pid_number, char character)
 
 int main(int argc, char **argv)
 {
-	(void)argc;
-	int id = atoi(argv[1]);	
+	int	id;
 	if (argc == 3)
 	{
+		id = atoi(argv[1]);	
 		handle_char(id, *argv[2]);
+	}
+	else
+	{
+		ft_printf("Erro, os argumentos de entrada estão errados!\n");
+		ft_printf("os argumentos devem ser: [./client PID mensagem]\n");
 	}
 	return (0);
 }

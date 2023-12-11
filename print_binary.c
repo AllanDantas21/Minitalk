@@ -20,5 +20,5 @@ void	to_bin(unsigned char character)
 
 int	main(void)
 {
-	to_bin(42);
+	to_bin(65);
 }
