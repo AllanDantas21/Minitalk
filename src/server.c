@@ -25,18 +25,6 @@ void	handle_user_sig(int sig)
 		c <<= 1;
 }
 
-	/* -> last handle func../-> must to be improved
-	if (sig == SIGUSR1)
-		bits[i++] = 1;	
-	if (sig == SIGUSR2)
-		bits[i++] = 0;
-	usleep(100);
-	if (i == 8)
-	{
-		ft_printf("printando bit:%c", binaryToChar(bits));
-		i = 0;
-	}*/
-
 int	main(void)
 {
 	minitalk_header();
