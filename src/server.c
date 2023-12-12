@@ -25,15 +25,21 @@ void	sig_to_char(int sig)
 		c <<= 1;
 }
 
-int	main(void)
+int	main(int argc, char **argv)
 {
-	minitalk_header();
-	ft_printf("server iniciado!!->");
-	ft_printf(" PID: %d\n", getpid());
-	while (1)
+	(void)argv;
+	if (argc != 1)
+		ft_printf("Erro: Formato invalido\nTente: ./server\n");
+	else
 	{
-		signal(SIGUSR1, sig_to_char);
-		signal(SIGUSR2, sig_to_char);
+		minitalk_header();
+		ft_printf("server iniciado!!->");
+		ft_printf(" PID: %d\n", getpid());
+		while (1)
+		{
+			signal(SIGUSR1, sig_to_char);
+			signal(SIGUSR2, sig_to_char);
+		}
 	}
 	return (0);
 }
