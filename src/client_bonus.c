@@ -1,12 +1,11 @@
 #include "../include/minitalk.h"
 
-static void sig_ack(int sig)
+static void	sig_ack(int sig)
 {
-    if (sig == SIGUSR1)
-        ft_printf("Mensagem recebida!\n");
-    else
-        ft_printf("Mensagem recebida!\n");
-
+	if (sig == SIGUSR1)
+		ft_printf("Mensagem recebida!\n");
+	else
+		ft_printf("Mensagem recebida!\n");
 }
 
 void	char_to_sig(int pid, char character)
@@ -60,8 +59,8 @@ int	main(int argc, char **argv)
 	{
 		if (check_args(argv[1], argv[2]) == -1)
 			return (0);
-        signal(SIGUSR1, sig_ack);
-        signal(SIGUSR2, sig_ack);
+		signal(SIGUSR1, sig_ack);
+		signal(SIGUSR2, sig_ack);
 		id = ft_atoi(argv[1]);
 		send_msg(id, argv[2]);
 	}
