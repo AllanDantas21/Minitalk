@@ -3,9 +3,9 @@
 static void sig_ack(int sig)
 {
     if (sig == SIGUSR1)
-        ft_printf("Mensagem recebida!");
+        ft_printf("Mensagem recebida!\n");
     else
-        ft_printf("Mensagem recebida!");
+        ft_printf("Mensagem recebida!\n");
 
 }
 
