@@ -19,7 +19,7 @@ void	char_to_sig(int pid, char character)
 			kill(pid, SIGUSR2);
 		else
 			kill(pid, SIGUSR1);
-		usleep(100);
+		usleep(200);
 	}
 }
 
