@@ -6,7 +6,7 @@
 /*   By: aldantas <aldantas@student.42.rio>		    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 09:21:52 by aldantas          #+#    #+#             */
-/*   Updated: 2023/12/15 10:06:14 by aldantas         ###   ########.fr       */
+/*   Updated: 2023/12/15 10:11:04 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/minitalk.h"
@@ -26,7 +26,7 @@ void	char_to_sig(int pid, char character)
 	i = 8;
 	while (i--)
 	{
-		if (character & ((1 << i))
+		if (character & (1 << i))
 			kill(pid, SIGUSR2);
 		else
 			kill(pid, SIGUSR1);
