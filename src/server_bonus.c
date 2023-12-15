@@ -6,7 +6,7 @@
 /*   By: aldantas <aldantas@student.42.rio>         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/15 09:23:24 by aldantas          #+#    #+#             */
-/*   Updated: 2023/12/15 09:23:45 by aldantas         ###   ########.fr       */
+/*   Updated: 2023/12/15 10:08:12 by aldantas         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "../include/minitalk.h"
@@ -18,7 +18,7 @@ void	minitalk_header(void)
 	ft_printf("| .  . | _  _ __   _ | |_   __ _ | || | __     \n");
 	ft_printf("| |\\/| || || '_ \\ | || __| / _` || || |/ /   \n");
 	ft_printf("| |  | || || | | || || |_ | (_| || ||   <      \n");
-	ft_printf("\\_|  |_/|_||_| |_||_| \\__| \\__,_||_||_|\\_\\\n\033[37m");
+	ft_printf("\\_|  |_/|_||_| |_||_| \\__| \\__,_||_||_|\\_\\\n\033[97m");
 }
 
 void	sig_to_char(int sig, siginfo_t *info, void *context)
