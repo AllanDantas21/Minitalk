@@ -7,11 +7,11 @@ void	char_to_sig(int pid, char character)
 	i = 8;
 	while (i--)
 	{
-		if (character & (1 << i))
-			kill(pid, SIGUSR2);
-		else
+		if (character & (0x01 << i) != 0)
 			kill(pid, SIGUSR1);
-		usleep(100);
+		else
+			kill(pid, SIGUSR2);
+		usleep(200);
 	}
 }
 
